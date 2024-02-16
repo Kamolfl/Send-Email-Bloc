@@ -19,7 +19,7 @@ class EmailBloc extends Bloc<EmailEvent, EmailState> {
        if (e is DioException) {
          emit(EmailErrorState(errorText: e.response.toString()));
        } else {
-         EmailErrorState(errorText: e.toString());
+         emit(EmailErrorState(errorText: e.toString()));
        }
      }
     });
